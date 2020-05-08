@@ -2,32 +2,37 @@ html {
     background-color: silver
 }
 
-.button {
- display:inline-block;
- padding:0.5em 3em;
- border:0.16em solid black;
- margin:0 0.3em 0.3em 0;
- box-sizing: border-box;
- text-decoration:none;
- text-transform:uppercase;
- font-family:'Roboto',sans-serif;
- font-weight:400;
- color:black;
- text-align:center;
- transition: all 0.2s;
+#title {
+  text-align: center;
+  font-weight: 500;
 }
-.button:hover{
- color:gray;
- border-color: gray;
+
+button {
+  display:inline-block;
+  padding:0.5em 3em;
+  border:0.16em solid black;
+  margin:0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-family:'Roboto',sans-serif;
+  font-weight:400;
+  color:black;
+  text-align:center;
+  transition: all 0.2s;
 }
-.button:active{
- color:slategray;
- border-color:slategray;
+button:hover{
+  color:gray;
+  border-color: gray;
+}
+button:active{
+  color:slategray;
+  border-color:slategray;
 }
 @media all and (max-width:30em){
- .button{
-  display:block;
-  margin:0.4em auto;
+  button{
+    display:block;
+    margin:0.4em auto;
  }
 }
     
