@@ -4,35 +4,31 @@ html {
 
 h1 {
   text-align: center;
+  text-size: 40px;
   font-weight: 500;
 }
 
 .btn {
-  background-color:lightgray;
-  font-size:20px
-  padding:14px 24px;
-  border: 2px solid black;
-  border-radius:12px;
-  font-family:'Roboto',sans-serif;
-  font-weight:400;
-  color:black;
-  text-align:center;
-  transition: 0.2s;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
 }
-.btn:hover{
-  color:gray;
-  border-color: gray;
+.btn:hover {background-color: darkslategray}
+.btn:active {
+  background-color: darkslategray;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
-.btn:active{
-  color:slategray;
-  border-color:slategray;
-}
-@media all and (max-width:30em){
-  .btn{
-    display:block;
-    margin:0.4em auto;
- }
-}
+
     
 #terminal div {
     color: gray;
