@@ -29,7 +29,7 @@ h1 {
   border: none;
   border-radius: 12px;
   box-shadow: 0 6px #999;
-  margin:5px 20px;
+  margin:5px 10px;
 }
 .btn:hover {background-color: darkslategray}
 .btn:active {
@@ -39,6 +39,7 @@ h1 {
 }
 
 #terminal {
+  display: block;
   margin: 0 auto;
 }    
 
@@ -49,15 +50,16 @@ h2 {
 }
 
 #terminal div {
-    margin:0 auto;
     float: left;
     color: gray;
 }
 
 #terminal div.out {
+    float: left;
     color: red;
 }
 
 #terminal div.in {
+    float: left;
     color: blue;
 }
