@@ -7,7 +7,7 @@ html {
   font-weight: 500;
 }
 
-button {
+.button {
   display:inline-block;
   padding:0.5em 3em;
   border:0.16em solid black;
@@ -21,16 +21,16 @@ button {
   text-align:center;
   transition: all 0.2s;
 }
-button:hover{
+.button:hover{
   color:gray;
   border-color: gray;
 }
-button:active{
+.button:active{
   color:slategray;
   border-color:slategray;
 }
 @media all and (max-width:30em){
-  button{
+  .button{
     display:block;
     margin:0.4em auto;
  }
