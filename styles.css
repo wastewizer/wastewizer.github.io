@@ -1,5 +1,5 @@
 html {
-    background-color: silver
+    background-color: lightgray
 }
 
 h1 {
@@ -8,17 +8,14 @@ h1 {
 }
 
 .btn {
-  display:inline-block;
-  padding:0.5em 3em;
-  border:0.16em solid black;
-  margin:0 0.3em 0.3em 0;
-  box-sizing: border-box;
-  text-decoration:none;
+  padding:10px 24px;
+  border: 2px solid black;
+  border-radius:12px;
   font-family:'Roboto',sans-serif;
   font-weight:400;
   color:black;
   text-align:center;
-  transition: all 0.2s;
+  transition: 0.2s;
 }
 .btn:hover{
   color:gray;
