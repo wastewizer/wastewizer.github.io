@@ -50,16 +50,13 @@ h2 {
 }
 
 #terminal div {
-    float: left;
     color: gray;
 }
 
 #terminal div.out {
-    float: left;
     color: red;
 }
 
 #terminal div.in {
-    float: left;
     color: blue;
 }
