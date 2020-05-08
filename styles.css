@@ -4,7 +4,7 @@ html {
 
 h1 {
   text-align: center;
-  text-size: 40px;
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -37,7 +37,17 @@ h1 {
   transform: translateY(4px);
 }
 
-    
+#terminal {
+  margin-left:auto;
+  margin-right:auto;
+}    
+
+h2 {
+  text-align: center;
+  font-size: 10px;
+  font-weight:200;
+}
+
 #terminal div {
     color: gray;
 }
