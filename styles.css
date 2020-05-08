@@ -7,7 +7,7 @@ h1 {
   font-weight: 500;
 }
 
-.button {
+.btn {
   display:inline-block;
   padding:0.5em 3em;
   border:0.16em solid black;
@@ -20,16 +20,16 @@ h1 {
   text-align:center;
   transition: all 0.2s;
 }
-.button:hover{
+.btn:hover{
   color:gray;
   border-color: gray;
 }
-.button:active{
+.btn:active{
   color:slategray;
   border-color:slategray;
 }
 @media all and (max-width:30em){
-  .button{
+  .btn{
     display:block;
     margin:0.4em auto;
  }
