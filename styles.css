@@ -29,7 +29,7 @@ h1 {
   border: none;
   border-radius: 12px;
   box-shadow: 0 6px #999;
-  margin: 20px 30px
+  margin:5px 20px;
 }
 .btn:hover {background-color: darkslategray}
 .btn:active {
@@ -49,6 +49,8 @@ h2 {
 }
 
 #terminal div {
+    margin:0 auto;
+    float: left;
     color: gray;
 }
 
