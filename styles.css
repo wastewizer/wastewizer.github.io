@@ -4,7 +4,7 @@ html {
 
 h1 {
   text-align: center;
-  font-size: 20px;
+  font-size: 50px;
   font-weight: 500;
 }
 
@@ -29,6 +29,7 @@ h1 {
   border: none;
   border-radius: 12px;
   box-shadow: 0 6px #999;
+  margin: 20px 30px
 }
 .btn:hover {background-color: darkslategray}
 .btn:active {
@@ -38,13 +39,12 @@ h1 {
 }
 
 #terminal {
-  margin-left:auto;
-  margin-right:auto;
+  margin: 0 auto;
 }    
 
 h2 {
   text-align: center;
-  font-size: 10px;
+  font-size: 30px;
   font-weight:200;
 }
 
