@@ -112,7 +112,7 @@ function handleCharacteristicValueChanged(event) {
 
 // Received data handling
 function receive(data) {
-  log(data, 'in');
+  document.getElementById("weight").innerHTML = data;
 }
 
 // Output to terminal
