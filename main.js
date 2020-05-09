@@ -2,8 +2,17 @@
 let connectButton = document.getElementById('connect');
 let disconnectButton = document.getElementById('disconnect');
 let terminalContainer = document.getElementById('terminal');
-let sendForm = document.getElementById('send-form');
-let inputField = document.getElementById('input');
+//let sendForm = document.getElementById('send-form');
+//let inputField = document.getElementById('input');
+
+// Selected device object cache
+let deviceCache = null;
+
+// Characteristic object cache
+let characteristicCache = null;
+
+// Intermediate buffer for incoming data
+let readBuffer = '';
 
 // Connect to the device on Connect button click
 connectButton.addEventListener('click', function() {
@@ -15,17 +24,6 @@ disconnectButton.addEventListener('click', function() {
   disconnect();
 });
 
-// Handle form submit event
-sendForm.addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent form sending
-  send(inputField.value); // Send text field contents
-  inputField.value = '';  // Zero text field
-  inputField.focus();     // Focus on text field
-});
-
-// Selected device object cache
-let deviceCache = null;
-
 // Launch Bluetooth device chooser and connect to the selected
 function connect() {
   return (deviceCache ? Promise.resolve(deviceCache) :
@@ -33,33 +31,6 @@ function connect() {
       then(device => connectDeviceAndCacheCharacteristic(device)).
       then(characteristic => startNotifications(characteristic)).
       catch(error => log(error));
-}
-
-// Disconnect from the connected device
-function disconnect() {
-  if (deviceCache) {
-    log('Disconnecting from "' + deviceCache.name + '" bluetooth device...');
-    deviceCache.removeEventListener('gattserverdisconnected',
-        handleDisconnection);
-
-    if (deviceCache.gatt.connected) {
-      deviceCache.gatt.disconnect();
-      log('"' + deviceCache.name + '" bluetooth device disconnected');
-    }
-    else {
-      log('"' + deviceCache.name +
-          '" bluetooth device is already disconnected');
-    }
-  }
-
-  // Added condition
-  if (characteristicCache) {
-    characteristicCache.removeEventListener('characteristicvaluechanged',
-        handleCharacteristicValueChanged);
-    characteristicCache = null;
-  }
-
-  deviceCache = null;
 }
 
 function requestBluetoothDevice() {
@@ -79,20 +50,6 @@ function requestBluetoothDevice() {
         return deviceCache;
       });
 }
-
-function handleDisconnection(event) {
-  let device = event.target;
-
-  log('"' + device.name +
-      '" bluetooth device disconnected, trying to reconnect...');
-
-  connectDeviceAndCacheCharacteristic(device).
-      then(characteristic => startNotifications(characteristic)).
-      catch(error => log(error));
-}
-
-// Characteristic object cache
-let characteristicCache = null;
 
 // Connect to the device specified, get service and characteristic
 function connectDeviceAndCacheCharacteristic(device) {
@@ -134,9 +91,6 @@ function startNotifications(characteristic) {
       });
 }
 
-// Intermediate buffer for incoming data
-let readBuffer = '';
-
 // Data receiving
 function handleCharacteristicValueChanged(event) {
   let value = new TextDecoder().decode(event.target.value);
@@ -166,6 +120,53 @@ function log(data, type = '') {
   terminalContainer.insertAdjacentHTML('beforeend',
       '<div' + (type ? ' class="' + type + '"' : '') + '>' + data + '</div>');
 }
+
+// Disconnect from the connected device
+function disconnect() {
+  if (deviceCache) {
+    log('Disconnecting from "' + deviceCache.name + '" bluetooth device...');
+    deviceCache.removeEventListener('gattserverdisconnected',
+        handleDisconnection);
+
+    if (deviceCache.gatt.connected) {
+      deviceCache.gatt.disconnect();
+      log('"' + deviceCache.name + '" bluetooth device disconnected');
+    }
+    else {
+      log('"' + deviceCache.name +
+          '" bluetooth device is already disconnected');
+    }
+  }
+
+  // Added condition
+  if (characteristicCache) {
+    characteristicCache.removeEventListener('characteristicvaluechanged',
+        handleCharacteristicValueChanged);
+    characteristicCache = null;
+  }
+
+  deviceCache = null;
+}
+
+function handleDisconnection(event) {
+  let device = event.target;
+
+  log('"' + device.name +
+      '" bluetooth device disconnected, trying to reconnect...');
+
+  connectDeviceAndCacheCharacteristic(device).
+      then(characteristic => startNotifications(characteristic)).
+      catch(error => log(error));
+}
+
+/*
+// Handle form submit event
+sendForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form sending
+  send(inputField.value); // Send text field contents
+  inputField.value = '';  // Zero text field
+  inputField.focus();     // Focus on text field
+});
 
 // Send data to the connected device
 function send(data) {
@@ -198,3 +199,4 @@ function send(data) {
 function writeToCharacteristic(characteristic, data) {
   characteristic.writeValue(new TextEncoder().encode(data));
 }
+*/
