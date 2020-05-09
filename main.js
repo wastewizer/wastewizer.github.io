@@ -42,7 +42,8 @@ function requestBluetoothDevice() {
       then(device => {
         log('"' + device.name + '" bluetooth device selected');
         deviceCache = device;
-
+        document.getElementById("dumpster").innerHTML = device.name;
+    
         // Added line
         deviceCache.addEventListener('gattserverdisconnected',
             handleDisconnection);
