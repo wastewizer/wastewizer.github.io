@@ -74,8 +74,7 @@ function connectDeviceAndCacheCharacteristic(device) {
       then(characteristic => {
         log('Characteristic found');
         characteristicCache = characteristic;
-        return Promise.resolve() .then(_ => characteristicCache.readValue()).then(value => {log(new TextDecoder().decode(value));});
-        document.getElementById("weight").innerHTML = characteristicCache.readValue();
+        document.getElementById("weight").innerHTML = Promise.resolve() .then(_ => characteristicCache.readValue()).then(value => {log(new TextDecoder().decode(value));});
         return characteristicCache;
       });
 }
