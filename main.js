@@ -2,8 +2,8 @@
 let connectButton = document.getElementById('connect');
 let disconnectButton = document.getElementById('disconnect');
 let terminalContainer = document.getElementById('terminal');
-//let sendForm = document.getElementById('send-form');
-//let inputField = document.getElementById('input');
+let sendForm = document.getElementById('send-form');
+let inputField = document.getElementById('input');
 
 // Selected device object cache
 let deviceCache = null;
@@ -162,7 +162,7 @@ function handleDisconnection(event) {
       catch(error => log(error));
 }
 
-/*
+
 // Handle form submit event
 sendForm.addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form sending
@@ -202,4 +202,4 @@ function send(data) {
 function writeToCharacteristic(characteristic, data) {
   characteristic.writeValue(new TextEncoder().encode(data));
 }
-*/
+
