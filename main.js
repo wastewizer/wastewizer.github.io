@@ -29,7 +29,7 @@ function connect() {
   return (deviceCache ? Promise.resolve(deviceCache) :
       requestBluetoothDevice()).
       then(device => connectDeviceAndCacheCharacteristic(device)).
-      then(characteristicCache => startNotifications(characteristicCache)).
+      then(characteristic => startNotifications(characteristic)).
       catch(error => log(error));
 }
 
