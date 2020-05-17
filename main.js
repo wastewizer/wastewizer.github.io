@@ -69,19 +69,19 @@ function connectDeviceAndCacheCharacteristic(device) {
       then(service => {
         log('Service found, getting characteristic...');
 
-        return service.getCharacteristics(0xFFE1);
+        return service.getCharacteristic(0xFFE1);
       }).
-      then(characteristics => {
+      then(characteristic => {
         log('Characteristic found');
-        log(characteristics);
-        characteristicCache = characteristics;
+        log(characteristic);
+        characteristicCache = characteristic;
 
         return characteristicCache;
       });
 }
 
 // Enable the characteristic changes notification
-function startNotifications(characteristics) {
+function startNotifications(characteristic) {
   log('Starting notifications...');
 
   return characteristic.startNotifications().
