@@ -73,9 +73,9 @@ function connectDeviceAndCacheCharacteristic(device) {
       }).
       then(characteristic => {
         log('Characteristic found');
-        log(characteristic);
         characteristicCache = characteristic;
-
+        log(characteristicCache.value());
+        document.getElementById("weight").innerHTML = characteristicCache.value();
         return characteristicCache;
       });
 }
@@ -114,7 +114,6 @@ function handleCharacteristicValueChanged(event) {
 
 // Received data handling
 function receive(data) {
-  document.getElementById("weight").innerHTML = data;
   log(data,'in');
 }
 
