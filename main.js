@@ -117,9 +117,9 @@ function handleCharacteristicValueChanged(event) {
 // Received data handling
 function receive(data) {
   document.getElementById("weight").innerHTML = data;
-  if (maxVal < abs(data)) {
+  if (maxVal <= abs(data)) {
     maxVal = data;
-    document.getElementById("maxWeight").innerHTML = maxVal;
+    document.getElementById("maxWeight").innerHTML = data;
   }
   log(data,'in');
 }
