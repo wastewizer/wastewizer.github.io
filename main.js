@@ -14,6 +14,9 @@ let characteristicCache = null;
 // Intermediate buffer for incoming data
 let readBuffer = '';
 
+// Maximum weight variable
+let maxVal = 0;
+
 // Connect to the device on Connect button click
 connectButton.addEventListener('click', function() {
   connect();
@@ -114,6 +117,10 @@ function handleCharacteristicValueChanged(event) {
 // Received data handling
 function receive(data) {
   document.getElementById("weight").innerHTML = data;
+  if (maxVal < abs(data)) {
+    maxVal = data;
+    document.getElementById("maxWeight").innerHTML = maxVal;
+  }
   log(data,'in');
 }
 
