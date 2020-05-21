@@ -113,6 +113,7 @@ function handleCharacteristicValueChanged(event) {
 
 // Received data handling
 function receive(data) {
+  document.getElementById("weight").innerHTML = data;
   log(data,'in');
 }
 
