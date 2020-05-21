@@ -74,7 +74,7 @@ function connectDeviceAndCacheCharacteristic(device) {
       then(characteristic => {
         log('Characteristic found');
         characteristicCache = characteristic;
-        log(characteristic);
+        log(characteristic.value());
         //log(characteristic.value());
         /*byte value = 0;
         characteristic.readValue(value);
