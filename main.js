@@ -1,9 +1,7 @@
 // Get references to UI elements
-let connectButton = document.getElementById('connect');
-let disconnectButton = document.getElementById('disconnect');
-let terminalContainer = document.getElementById('terminal');
-let sendForm = document.getElementById('send-form');
-let inputField = document.getElementById('input');
+let CostButton = document.getElementById('cost');
+let StatusButton = document.getElementById('status');
+let PickupButton = document.getElementById('pickup');
 
 // Selected device object cache
 let deviceCache = null;
