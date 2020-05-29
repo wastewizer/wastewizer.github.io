@@ -1,29 +1,31 @@
 // Get references to UI elements
-let connectButton = document.getElementById('connect');
-let disconnectButton = document.getElementById('disconnect');
-let terminalContainer = document.getElementById('terminal');
-let sendForm = document.getElementById('send-form');
-let inputField = document.getElementById('input');
+let CostButton = document.getElementById('cost');
+let StatusButton = document.getElementById('status');
+let PickupButton = document.getElementById('pickup');
 
-// Selected device object cache
-let deviceCache = null;
+$ bower install particle-api-js
 
-// Characteristic object cache
-let characteristicCache = null;
+particle.login({ username : "USERNAME", password : "PASSWORD" }).then(function(data) {
+  particle.getEventStream({ deviceId: 'mine', auth: data.body.access_token }).then(function(stream) {
+    stream.on('event', function(feed) {
+      console.log("Event: " + feed);
+    });
+  });
+});
 
-// Intermediate buffer for incoming data
-let readBuffer = '';
 
-// Maximum weight variable
-let maxVal = 0;
-
+/*
 // Connect to the device on Connect button click
-connectButton.addEventListener('click', function() {
+CostButton.addEventListener('click', function() {
   connect();
 });
 
 // Disconnect from the device on Disconnect button click
-disconnectButton.addEventListener('click', function() {
+StatusButton.addEventListener('click', function() {
+  disconnect();
+});
+
+PickupButton.addEventListener('click', function() {
   disconnect();
 });
 
@@ -209,3 +211,4 @@ function writeToCharacteristic(characteristic, data) {
   characteristic.writeValue(new TextEncoder().encode(data));
 }
 
+*/
