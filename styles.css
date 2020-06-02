@@ -18,8 +18,8 @@ h1 {
 
 .btn {
   display: inline-block;
-  padding: 10px 20px;
-  font-size: 12px;
+  padding: 15px 30px;
+  font-size: 20px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -27,14 +27,14 @@ h1 {
   color: white;
   background-color: black;
   border: none;
-  border-radius: 12px;
-  box-shadow: 0 6px #999;
-  margin:5px 10px;
+  border-radius: 15px;
+  box-shadow: 0 8px #999;
+  margin:15px 30px;
 }
 .btn:hover {background-color: darkslategray}
 .btn:active {
   background-color: darkslategray;
-  box-shadow: 0 2px #666;
+  box-shadow: 0 4px #666;
   transform: translateY(4px);
 }
 
