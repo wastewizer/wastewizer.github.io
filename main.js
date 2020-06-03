@@ -25,9 +25,9 @@ particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }
   });
 });
 
-function log(data, type = '') {
+function log(data) {
   debug.insertAdjacentHTML('beforeend',
-      '<div' + (type ? ' class="' + type + '"' : '') + '>' + data + '</div>');
+      '<div>' + data + '</div>');
 }
 
 /*
