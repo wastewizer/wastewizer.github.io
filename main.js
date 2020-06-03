@@ -2,20 +2,33 @@
 let CostButton = document.getElementById('cost');
 let StatusButton = document.getElementById('status');
 let PickupButton = document.getElementById('pickup');
+let debug = document.getElementById('debug');
 
 $ bower install particle-api-js
+POST /oauth/token
+$ curl https://api.particle.io/oauth/token \
+       -u particle:particle \
+       -d grant_type=password \
+       -d "username=aclark@wastewizer.com" \
+       -d "password=Wastewizer.1"
 
 var weight;
 
 particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }).then(function(data) {
+  log(data);
   particle.getEventStream({ deviceId: 'e00fce68a38d68b5d14b3e8b', name: "StringWeight", auth: data.body.access_token }).then(function(stream) {
     stream.on('event', function(feed) {
+      log(feed.data);
       weight = feed.data;
       document.getElementById("weight").innerHTML = weight;
     });
   });
 });
 
+function log(data, type = '') {
+  debug.insertAdjacentHTML('beforeend',
+      '<div' + (type ? ' class="' + type + '"' : '') + '>' + data + '</div>');
+}
 
 /*
 // Connect to the device on Connect button click
