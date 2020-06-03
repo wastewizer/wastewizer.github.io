@@ -5,8 +5,8 @@ let PickupButton = document.getElementById('pickup');
 
 $ bower install particle-api-js
 
-particle.login({ username : "USERNAME", password : "PASSWORD" }).then(function(data) {
-  particle.getEventStream({ deviceId: 'mine', auth: data.body.access_token }).then(function(stream) {
+particle.login({ username : "aclark@wastewizer.com", password : "" }).then(function(data) {
+  particle.getEventStream({ deviceId: 'e00fce68a38d68b5d14b3e8b', auth: data.body.access_token }).then(function(stream) {
     stream.on('event', function(feed) {
       console.log("Event: " + feed);
     });
