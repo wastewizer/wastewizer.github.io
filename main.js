@@ -5,13 +5,8 @@ let PickupButton = document.getElementById('pickup');
 let debug = document.getElementById('debug');
 
 $ bower install particle-api-js
-POST /oauth/token
-$ curl https://api.particle.io/oauth/token \
-       -u particle:particle \
-       -d grant_type=password \
-       -d "username=aclark@wastewizer.com" \
-       -d "password=Wastewizer.1"
-log("Hello World");
+
+log('Hello World');
 var weight;
 
 particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }).then(function(data) {
