@@ -5,10 +5,13 @@ let PickupButton = document.getElementById('pickup');
 
 $ bower install particle-api-js
 
+var weight;
+
 particle.login({ username : "aclark@wastewizer.com", password : "" }).then(function(data) {
-  particle.getEventStream({ deviceId: 'e00fce68a38d68b5d14b3e8b', auth: data.body.access_token }).then(function(stream) {
+  particle.getEventStream({ deviceId: 'e00fce68a38d68b5d14b3e8b', name: "StringWeight", auth: data.body.access_token }).then(function(stream) {
     stream.on('event', function(feed) {
-      console.log("Event: " + feed);
+      weight = feed.data;
+      document.getElementById("weight").innerHTML = weight;
     });
   });
 });
