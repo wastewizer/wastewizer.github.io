@@ -11,7 +11,7 @@ $ curl https://api.particle.io/oauth/token \
        -d grant_type=password \
        -d "username=aclark@wastewizer.com" \
        -d "password=Wastewizer.1"
-
+log("Hello World");
 var weight;
 
 particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }).then(function(data) {
