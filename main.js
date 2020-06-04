@@ -1,3 +1,7 @@
+var particle = new Particle();
+var myDevice = "e00fce68a38d68b5d14b3e8b"; // Photon device ID
+var myToken = "0000"; // Photon access token
+
 // Get references to UI elements
 let CostButton = document.getElementById('cost');
 let StatusButton = document.getElementById('status');
