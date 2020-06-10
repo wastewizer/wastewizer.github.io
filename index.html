@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles.css" type="text/css" rel="stylesheet">
+  </head>
+  
+  <body>
+    
+    <div class="Options">
+      <img src="Logo.svg" height="500" width="700"/> 
+      <br>
+      <form id="login">
+        <label for="username">Username/email:</label><br>
+        <input id="username" type="text" value="e.x. name@gmail.com"><br>
+        <label for="password">Password:</label><br>
+        <input id="password" type="text"><br>
+        <button type="submit" class="subbtn">LOGIN</button>
+      </form>
+    </div>    
+    
+    <div id="debug">
+      <h2> Debug notifications here </h2>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particle-api-js/7.3.0/particle.min.js"></script>
+    <script src="main.js"></script>
 
+    </body>
+</html>
