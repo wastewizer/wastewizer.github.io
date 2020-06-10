@@ -2,7 +2,7 @@
 let CostButton = document.getElementById('cost');
 let StatusButton = document.getElementById('status');
 let PickupButton = document.getElementById('pickup');
-let debug = document.getElementById('debug');
+let Debug = document.getElementById('debug');
 
 $ bower install particle-api-js
 
@@ -15,7 +15,7 @@ particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }
     stream.on('event', function(feed) {
       log(feed.data);
       weight = feed.data;
-      document.getElementById("weight").innerHTML = weight;
+      document.getElementById("weight").innerHTML = 'Hello World';
     });
   });
 });
