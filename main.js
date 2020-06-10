@@ -1,13 +1,13 @@
 // Get references to UI elements
-let CostButton = document.getElementById('cost');
-let StatusButton = document.getElementById('status');
-let PickupButton = document.getElementById('pickup');
+let YesButton = document.getElementById('confirm');
 let Debug = document.getElementById('debug');
 
 log('Hello World');
+console.log('Hello');
 var weight;
 var particle = new Particle();
 
+/*
 particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }).then(function(data) {
   log('Login Successful');
   log(data);
@@ -20,22 +20,13 @@ particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }
   });
 });
 
+*/
+
 function log(data) {
-  Debug.insertAdjacentHTML('beforeend',
-      '<div>' + data + '</div>');
+  Debug.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
 }
 
-/*
-// Connect to the device on Connect button click
-CostButton.addEventListener('click', function() {
-  connect();
-});
-
-// Disconnect from the device on Disconnect button click
-StatusButton.addEventListener('click', function() {
-  disconnect();
-});
-
-PickupButton.addEventListener('click', function() {
-  disconnect();
+// Send pickup notice on button click
+YesButton.addEventListener('click', function() {
+  sendNotice();
 });
