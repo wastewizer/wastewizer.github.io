@@ -2,8 +2,6 @@
 let YesButton = document.getElementById('confirm');
 let Debug = document.getElementById('debug');
 
-log('Hello World');
-console.log('Hello');
 var weight;
 var particle = new Particle();
 
