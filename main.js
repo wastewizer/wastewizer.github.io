@@ -1,11 +1,14 @@
 // Get references to UI elements
 let Debug = document.getElementById('debug');
 
+
+// Declare global variables
 var weight;
 var particle = new Particle();
+var user = "aclark@wastewizer.com";
+var pass = "Wastewizer.1";
 
-
-particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }).then(function(data) {
+particle.login({ username : user, password : pass }).then(function(data) {
   log('Login Successful');
   log(data.body.access_token);
   
@@ -30,10 +33,22 @@ particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }
     document.getElementById("weight").innerHTML = "Weight is " + stream.body.result);
  }, function(err) {
         console.log("An error occurred retrieving data:", err);
-});
+  });
   
 });
 
+particle.createUser({ username: user, password: pass }).then(function(data) 
+  var loginPromise = particle.login('example@email.com', 'pass');
+    loginPromise.then(
+      function(data) {
+        console.log('Login successful! access_token:', data.access_token);
+      },
+      function(err) {
+        console.log('Login failed:', err);
+      }
+    );
+  }
+});
 
 function log(data) {
   Debug.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
