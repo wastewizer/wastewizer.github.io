@@ -5,7 +5,6 @@ let Debug = document.getElementById('debug');
 var weight;
 var particle = new Particle();
 
-/*
 particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }).then(function(data) {
   log('Login Successful');
   log(data);
@@ -18,7 +17,6 @@ particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }
   });
 });
 
-*/
 
 function log(data) {
   Debug.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
