@@ -6,6 +6,7 @@ let Debug = document.getElementById('debug');
 
 log('Hello World');
 var weight;
+var particle = new Particle();
 
 particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }).then(function(data) {
   log('Login Successful');
