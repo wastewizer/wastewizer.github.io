@@ -4,6 +4,9 @@ let Debug = document.getElementById('debug');
 var weight;
 var particle = new Particle();
 
+weight = 1;
+window.setInterval(checkWeight, 5000);
+
 particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }).then(function(data) {
   log('Login Successful');
   log(data.body.access_token);
@@ -33,6 +36,9 @@ particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }
   
 });
 
+function checkWeight() {
+  weight = weight+1;
+}
 
 function log(data) {
   Debug.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
