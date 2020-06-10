@@ -38,6 +38,7 @@ particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }
 
 function checkWeight() {
   weight = weight+1;
+  log(weight);
 }
 
 function log(data) {
