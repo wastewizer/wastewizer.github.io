@@ -21,7 +21,7 @@ particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }
 });
 
 function log(data) {
-  debug.insertAdjacentHTML('beforeend',
+  Debug.insertAdjacentHTML('beforeend',
       '<div>' + data + '</div>');
 }
 
