@@ -11,10 +11,8 @@ h1 {
 }
 
 .Options {
-  margin:0;
-  position: absolute;
-  left: 50%
-  right: 50%
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn {
