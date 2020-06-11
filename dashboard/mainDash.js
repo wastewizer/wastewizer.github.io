@@ -54,6 +54,4 @@ particle.createUser({ username: user, password: pass }).then(function(data)
         console.log('Login failed:', err);
       }
     );
-  }
-});
 
