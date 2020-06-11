@@ -14,7 +14,7 @@ function validateForm() {
     return false;
   } else if (user == "aclark@wastewizer.com") {
       if (pass == "Wastewizer.1") {
-        location = "main";
+        location = "dashboard";
       } else {
         alert("Invalid Username/Password Combination");
       }
