@@ -2,6 +2,11 @@
 let sendForm = document.getElementById('login');
 let inputUsername = document.getElementById('username');
 let inputPassword = document.getElementById('password');
+let Debug = document.getElementById('debug');
+
+function log(data) {
+  Debug.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
+}
 
 function validateForm() {
   var user = document.forms["LoginInfo"]["uname"].value;
@@ -13,6 +18,7 @@ function validateForm() {
     alert("Password must be filled out");
     return false;
   } else if (user == "aclark@wastewizer.com") {
+    log(pass);
       if (pass.localeCompare("Wastewizer.1")) {
         location = "dashboard";
       } else {
