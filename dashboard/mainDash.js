@@ -1,7 +1,7 @@
 // Get references to UI elements
 let Debug = document.getElementById('debugDash');
 
-log("Debug working");
+log("Debug working!");
 // Declare global variables
 let weight;
 var particle = new Particle();
