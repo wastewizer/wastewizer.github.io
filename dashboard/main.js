@@ -8,6 +8,7 @@ var particle = new Particle();
 var user = "aclark@wastewizer.com";
 var pass = "Wastewizer.1";
 log("Debug working");
+document.getElementById("weight").innerHTML = 'Hello World!!';
 
 function log(data) {
   Debug.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
