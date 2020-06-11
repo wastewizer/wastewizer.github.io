@@ -9,6 +9,11 @@ var user = "aclark@wastewizer.com";
 var pass = "Wastewizer.1";
 log("Debug working");
 
+function log(data) {
+  Debug.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
+}
+
+
 particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }).then(function(data) {
   log('Login Successful');
   log(data.body.access_token);
@@ -50,9 +55,4 @@ particle.createUser({ username: user, password: pass }).then(function(data)
     );
   }
 });
-
-
-function log(data) {
-  Debug.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
-}
 
