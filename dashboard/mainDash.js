@@ -1,13 +1,13 @@
 // Get references to UI elements
 let Debug = document.getElementById('debugDash');
 
-
+log("Debug working");
 // Declare global variables
 var weight;
 var particle = new Particle();
 var user = "aclark@wastewizer.com";
 var pass = "Wastewizer.1";
-log("Debug working");
+
 document.getElementById("weight").innerHTML = 'Hello World!!';
 
 function log(data) {
