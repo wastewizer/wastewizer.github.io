@@ -48,7 +48,7 @@ p {
 /* ////////////////////////////////////////// Login Page //////////////////////////////////////////// */
 /* Full-width inputs */
 input[type=text], input[type=password] {
-  width: 100%;
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -64,7 +64,7 @@ input[type=text], input[type=password] {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 50%;
 }
 
 /* Add a hover effect for buttons */
@@ -73,7 +73,7 @@ button:hover {
 }
 
 /* Extra style for the cancel button (red) */
-.cancelbtn {
+.homebtn {
   color: white;
   margin: 8px 0;
   border: none;
@@ -97,11 +97,14 @@ span.psw {
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
+   input[type=text], input[type=password] {
+    width: 100%;
+    }
   span.psw {
     display: block;
     float: none;
   }
-  .cancelbtn {
+  .homebtn {
     width: 80%;
   }
 }
