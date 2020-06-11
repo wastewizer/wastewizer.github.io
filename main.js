@@ -5,7 +5,7 @@ let inputPassword = document.getElementById('password');
 let Debug = document.getElementById('debug');
 
 function log(data) {
-  Debug.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
+  Debug.insertAdjacentHTML('afterend', '<p>' + data + '</p>');
 }
 
 function validateForm() {
