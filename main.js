@@ -35,6 +35,6 @@ function validateForm() {
 // Handle login form submit event
 sendForm.addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form sending
-  validateForm); // Send text field contents
+  validateForm(); // Send text field contents
   
 });
