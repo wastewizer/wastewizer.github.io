@@ -50,20 +50,8 @@ particle.createUser({ username: user, password: pass }).then(function(data)
   }
 });
 
+
 function log(data) {
   Debug.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
 }
 
-
-
-
-let YesButton = document.getElementById('confirm');
-
-// Send pickup notice on button click
-YesButton.addEventListener('click', function() {
-  sendNotice();
-});
-
-function sendNotice() {
- 
-}
