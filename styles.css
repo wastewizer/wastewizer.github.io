@@ -47,11 +47,6 @@ p {
 
 
 /* ////////////////////////////////////////// Login Page //////////////////////////////////////////// */
-/* Bordered form */
-form {
-  border: 3px solid #f1f1f1;
-}
-
 /* Full-width inputs */
 input[type=text], input[type=password] {
   width: 100%;
@@ -64,7 +59,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for login button */
 .loginbtn {
-  background-color: #4CAF50;
+  background-color: navy;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -92,6 +87,7 @@ button:hover {
 /* Add padding to containers */
 .container {
   padding: 16px;
+  background-color: darkgray;
 }
 
 /* The "Forgot password" text */
