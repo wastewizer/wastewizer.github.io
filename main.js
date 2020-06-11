@@ -19,19 +19,22 @@ function validateForm() {
     return false;
   } else if (user == "aclark@wastewizer.com") {
     log(pass);
-      if (pass.localeCompare("Wastewizer.1")) {
-        location = "dashboard";
+      if (pass == "Wastewizer.1") {
+        location.href = "dashboard";
       } else {
         alert("Invalid Username/Password Combination");
+        inputPassword.value = '';  // Zero text field
+        inputPassword.focus();     // Focus on text field
       }
   } else
-    return false;
+    alert("Invalid Username/Password Combination");
+    inputPassword.value = '';  // Zero text field
+    inputPassword.focus();     // Focus on text field
 }
 
 // Handle login form submit event
 sendForm.addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form sending
-  send(inputField.value); // Send text field contents
-  inputPassword.value = '';  // Zero text field
-  inputPassword.focus();     // Focus on text field
+  validateForm); // Send text field contents
+  
 });
