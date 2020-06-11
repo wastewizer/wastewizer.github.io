@@ -1,5 +1,5 @@
 // Get references to UI elements
-let Debug = document.getElementById('debug');
+let Debug = document.getElementById('debugDash');
 
 
 // Declare global variables
@@ -38,7 +38,7 @@ particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }
    log(weight);
     document.getElementById("weight").innerHTML = "Weight is " + stream.body.result);
  }, function(err) {
-        console.log("An error occurred retrieving data:", err);
+        log("An error occurred retrieving data:", err);
   });
   
 });
