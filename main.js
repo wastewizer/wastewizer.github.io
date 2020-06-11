@@ -4,7 +4,7 @@ let inputUsername = document.getElementById('username');
 let inputPassword = document.getElementById('password');
 let Debug = document.getElementById('debug');
 
-log("HelloWorld");
+log("Debug working");
 log(Client_ID_1);
 
 function log(data) {
