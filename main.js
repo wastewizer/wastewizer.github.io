@@ -14,13 +14,7 @@ function log(data) {
 function validateForm() {
   var user = document.forms["LoginInfo"]["uname"].value;
   var pass = document.forms["LoginInfo"]["psw"].value;
-  if (user == "") {
-    alert("Username must be filled out");
-    return false;
-  } else if (pass == "") {
-    alert("Password must be filled out");
-    return false;
-  } else if (user == "aclark@wastewizer.com") {
+  if (user == "aclark@wastewizer.com") {
     log(pass);
       if (pass == "Wastewizer.1") {
         location.href = "dashboard";
