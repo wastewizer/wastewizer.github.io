@@ -38,3 +38,5 @@ sendForm.addEventListener('submit', function(event) {
   validateForm(); // Send text field contents
   
 });
+
+log(Client_ID_1);
