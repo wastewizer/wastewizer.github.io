@@ -7,6 +7,7 @@ var weight;
 var particle = new Particle();
 var user = "aclark@wastewizer.com";
 var pass = "Wastewizer.1";
+log(pass);
 
 particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }).then(function(data) {
   log('Login Successful');
