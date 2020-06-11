@@ -4,8 +4,11 @@ let inputUsername = document.getElementById('username');
 let inputPassword = document.getElementById('password');
 let Debug = document.getElementById('debug');
 
+log("HelloWorld");
+log(Client_ID_1);
+
 function log(data) {
-  Debug.insertAdjacentHTML('afterend', '<p>' + data + '</p>');
+  Debug.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
 }
 
 function validateForm() {
@@ -38,6 +41,3 @@ sendForm.addEventListener('submit', function(event) {
   validateForm(); // Send text field contents
   
 });
-
-log("HelloWorld");
-log(Client_ID_1);
