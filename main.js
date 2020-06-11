@@ -24,7 +24,8 @@ function validateForm() {
       } else {
         alert("Invalid Username/Password Combination");
       }
-  }
+  } else
+    return false;
 }
 
 // Handle login form submit event
