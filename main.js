@@ -13,7 +13,7 @@ function validateForm() {
     alert("Password must be filled out");
     return false;
   } else if (user == "aclark@wastewizer.com") {
-      if (pass == "Wastewizer.1") {
+      if (pass.localeCompare("Wastewizer.1")) {
         location = "dashboard";
       } else {
         alert("Invalid Username/Password Combination");
