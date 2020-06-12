@@ -52,14 +52,3 @@ particle.login({ username : "aclark@wastewizer.com", password : "Wastewizer.1" }
   
 });
 
-particle.createUser({ username: user, password: pass }).then(function(data) 
-  var loginPromise = particle.login('example@email.com', 'pass');
-    loginPromise.then(
-      function(data) {
-        log('Login successful! access_token:', data.access_token);
-      },
-      function(err) {
-        log('Login failed:', err);
-      }
-    );
-
