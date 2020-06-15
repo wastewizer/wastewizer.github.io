@@ -1,7 +1,7 @@
 // Get references to UI elements
 let Debug = document.getElementById('debugDash');
-let var1 = document.getElementById('var1');
-let var2 = document.getElementById('var2');
+let Var1 = document.getElementById('var1');
+let Var2 = document.getElementById('var2');
 
 debugLog("Debug working");
 // Declare global variables
@@ -17,11 +17,11 @@ function debugLog(data) {
 }
 
 function log1(data) {
-  var1.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
+  Var1.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
 }
 
 function log2(data) {
-  var2.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
+  Var2.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
 }
 
 particle.login({ username : user, password : pass }).then(function(data) {
