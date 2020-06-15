@@ -3,7 +3,7 @@ let Debug = document.getElementById('debugDash');
 let var1 = document.getElementById('var1');
 let var2 = document.getElementById('var2');
 
-log("Debug working");
+debugLog("Debug working");
 // Declare global variables
 var strainGaugeReadings;
 var angles1;
