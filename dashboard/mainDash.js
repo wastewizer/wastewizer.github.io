@@ -34,7 +34,7 @@ particle.login({ username : user, password : pass }).then(function(data) {
   getData(myDevice, myToken);
    
   // stop for sometime if needed
-  setInterval(getData, 10000);
+  setInterval(getData, 5000);
   
 });
 
