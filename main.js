@@ -5,7 +5,6 @@ let inputPassword = document.getElementById('password');
 let Debug = document.getElementById('debug');
 
 log("Debug working");
-log(Client_ID_1);
 
 function log(data) {
   Debug.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
