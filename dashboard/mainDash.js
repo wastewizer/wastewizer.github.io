@@ -24,7 +24,7 @@ function log2(data) {
   Var2.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
 }
 
-particle.login({ username : user, password : pass, tokenDuration : 1000000}).then(function(data) {
+particle.login({ username : user, password : pass}).then(function(data) {
   debugLog('Login Successful');
   debugLog(data.body.access_token);
   
