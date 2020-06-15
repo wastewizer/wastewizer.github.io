@@ -3,9 +3,8 @@ let Debug = document.getElementById('debugDash');
 
 log("Debug working");
 // Declare global variables
-var sgStr;
-var angleStr1;
-var angleStr2;
+var strainGaugeReadings;
+var angles1;
 var particle = new Particle();
 var user = "aclark@wastewizer.com";
 var pass = "Wastewizer.1";
@@ -42,7 +41,6 @@ particle.login({ username : user, password : pass }).then(function(data) {
   });
    
    function pause() {
-    // your code to run after the timeout
   }
 
   // stop for sometime if needed
