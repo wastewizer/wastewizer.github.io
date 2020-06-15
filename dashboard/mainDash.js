@@ -2,7 +2,6 @@
 let Debug = document.getElementById('debugDash');
 
 log("Debug working");
-log(CLIENT_ID_1);
 // Declare global variables
 var X;
 var Y;
