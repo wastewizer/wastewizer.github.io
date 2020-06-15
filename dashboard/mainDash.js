@@ -21,13 +21,21 @@ particle.login({ username : user, password : pass }).then(function(data) {
   
   var myDevice = 'e00fce68a38d68b5d14b3e8b';
   myToken = data.body.access_token;
- while (true) {
- particle.getVariable({ deviceId: myDevice, name: "strainGaugeReadings", auth: myToken }).then(function(data1) {
+  
+  getData(myDevice, myToken);
+   
+  // stop for sometime if needed
+  setInterval(getData, 10000);
+  
+});
+
+function getData(myDevice, myToken) {
+  particle.getVariable({ deviceId: myDevice, name: "strainGaugeReadings", auth: myToken }).then(function(data1) {
     // insert code to do something with stream.body.result
    strainGaugeReadings = data1.body.result;
    log("strainGaugeReadings: "+strainGaugeReadings);
     document.getElementById("data1").innerHTML = strainGaugeReadings;
- }, function(err) {
+  }, function(err) {
         log("An error occurred retrieving data:", err);
   });
   
@@ -36,17 +44,7 @@ particle.login({ username : user, password : pass }).then(function(data) {
    angleStr1 = data2.body.result;
    log("angles1: "+angles1);
     document.getElementById("data2").innerHTML = angles1;
- }, function(err) {
+  }, function(err) {
         log("An error occurred retrieving data:", err);
-  });
-   
-   function pause() {
-  }
-
-  // stop for sometime if needed
-  setTimeout(pause, 10000);
-     
- }  
-});
-
-
+    });
+}
