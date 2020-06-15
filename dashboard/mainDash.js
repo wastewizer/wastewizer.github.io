@@ -22,7 +22,7 @@ particle.login({ username : user, password : pass }).then(function(data) {
   
   var myDevice = 'e00fce68a38d68b5d14b3e8b';
   myToken = data.body.access_token;
- 
+ while (true) {
  particle.getVariable({ deviceId: myDevice, name: "strainGaugeReadings", auth: myToken }).then(function(data1) {
     // insert code to do something with stream.body.result
    strainGaugeReadings = data1.body.result;
@@ -40,7 +40,15 @@ particle.login({ username : user, password : pass }).then(function(data) {
  }, function(err) {
         log("An error occurred retrieving data:", err);
   });
-  
-  
+   
+   function pause() {
+    // your code to run after the timeout
+  }
+
+  // stop for sometime if needed
+  setTimeout(pause, 10000);
+     
+ }  
 });
+
 
