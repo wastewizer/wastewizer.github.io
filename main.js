@@ -10,9 +10,7 @@ function log(data) {
   Debug.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
 }
 
-function validateForm() {
-  var user = document.forms["LoginInfo"]["uname"].value;
-  var pass = document.forms["LoginInfo"]["psw"].value;
+function login() {
   if (user == "aclark@wastewizer.com") {
     log(pass);
       if (pass == "Wastewizer.1") {
@@ -29,8 +27,9 @@ function validateForm() {
 }
 
 // Handle login form submit event
-sendForm.addEventListener('submit', function(event) {
+sendForm.addEventListener('click', function(event) {
   event.preventDefault(); // Prevent form sending
-  //return validateForm(); // Send text field contents
+  login(); // login
+  
   
 });

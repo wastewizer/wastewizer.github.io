@@ -10,7 +10,6 @@
        
     <div class="Options">
       <img src="../../Logo.svg" width=100%/> 
-      <br>
       <p>Schedule Pickup</p>
       <button id="confirm" class="btn" type="button">YES</button>
       <button id="deny" onclick="location.href='..'" class="btn" type="button">NO</button>
@@ -35,7 +34,14 @@
 	      To : 'philipli512@gmail.com',
 	      From : "wastewizernotifications@gmail.com",
 	      Subject : "Pickup Test",
-	      Body : "Hello World!",
+        Body : "Hello World!",
+        /* 
+        Attachments : [
+  	    {
+  		  name : "smtpjs.png",
+  		  path:"https://networkprogramming.files.wordpress.com/2017/11/smtpjs.png"
+        }] 
+        */
 	      }).then(
 		    message => alert("mail sent successfully")
 	      );
