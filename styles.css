@@ -29,7 +29,7 @@ h1 {
   border: none;
   border-radius: 15px;
   box-shadow: 0 8px #999;
-  margin: 15px auto;
+  margin: 15px 30px;
 }
 .btn:hover {background-color: darkslategray}
 .btn:active {
