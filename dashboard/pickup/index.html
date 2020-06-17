@@ -18,16 +18,27 @@
 
     </body>
   
+    <script src="https://smtpjs.com/v3/smtp.js""></script>
     <script>
       let YesButton = document.getElementById('confirm');
 
       // Send pickup notice on button click
       YesButton.addEventListener('click', function() {
-      sendNotice();
+      sendEmail();
       });
 
-      function sendNotice() {
- 
+      function sendEmail() {
+      	Email.send({
+	      Host: "smtp.gmail.com",
+	      Username : "wastewizernotifications@gmail.com",
+	      Password : "THWGsum20",
+	      To : 'philipli512@gmail.com',
+	      From : "wastewizernotifications@gmail.com",
+	      Subject : "Pickup Test",
+	      Body : "Hello World!",
+	      }).then(
+		    message => alert("mail sent successfully")
+	      );
       }
   </script>
      
