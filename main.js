@@ -17,19 +17,17 @@ function login() {
         location.href = "dashboard";
       } else {
         alert("Invalid Username/Password Combination");
-        inputPassword.value = '';  // Zero text field
-        inputPassword.focus();     // Focus on text field
+        location.reload();
       }
   } else
     alert("Invalid Username/Password Combination");
-    inputPassword.value = '';  // Zero text field
-    inputPassword.focus();     // Focus on text field
+    location.reload();
 }
 
 // Handle login form submit event
 sendForm.addEventListener('click', function(event) {
   event.preventDefault(); // Prevent form sending
   login(); // login
-  
+
   
 });
