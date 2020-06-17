@@ -11,9 +11,10 @@ h1 {
 }
 
 .Options {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 .btn {
@@ -29,7 +30,7 @@ h1 {
   border: none;
   border-radius: 15px;
   box-shadow: 0 8px #999;
-  margin: 15px 30px;
+  margin:15px 30px;
 }
 .btn:hover {background-color: darkslategray}
 .btn:active {
@@ -51,7 +52,7 @@ p {
 input[type=text], input[type=password] {
   width: 50%;
   padding: 12px 20px;
-  margin: 8px auto;
+  margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -62,7 +63,7 @@ input[type=text], input[type=password] {
   background-color: navy;
   color: white;
   padding: 14px 20px;
-  margin: 8px auto;
+  margin: 8px 0;
   border: none;
   cursor: pointer;
   width: 50%;
@@ -76,7 +77,7 @@ button:hover {
 /* Extra style for the cancel button (red) */
 .homebtn {
   color: white;
-  margin: 8px 8px;
+  margin: 8px 0;
   border: none;
   cursor: pointer;
   width: auto;
@@ -95,7 +96,7 @@ button:hover {
 
 /* The "Forgot password" text */
 span.psw {
-  margin: 8px 8px;
+  float: right;
   padding-top: 16px;
 }
 
