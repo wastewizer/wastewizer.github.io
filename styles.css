@@ -4,6 +4,10 @@ html {
     background-color: darkgray
 }
 
+body {
+    margin: 0 auto;
+}
+
 h1 {
   text-align: center;
   font-size: 50px;
@@ -11,7 +15,9 @@ h1 {
 }
 
 .Options {
-  margin: 0 auto
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   width: 50%;
 }
 
