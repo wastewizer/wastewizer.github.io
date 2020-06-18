@@ -42,18 +42,18 @@ h1 {
 /* ////////////////////////////////////////// Login Page //////////////////////////////////////////// */
 #container {
   width: 300px;
-  margin: 0 auto;
+  margin: auto auto;
 }
 .tabs {
   display: table-cell;
   width: 30%;
   background-color: royalblue;
-  padding: 10px;
+  padding: 20px 10px;
   float: left;
   text-align: center;
   vertical-align: middle;
   border: 2px solid #ffffff;
-  border-bottom: 2px;
+  border-bottom: 0px;
   position: relative;
   font-size: 1.3em;
   color: #ffffff;
