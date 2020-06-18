@@ -43,7 +43,6 @@ h1 {
 #container {
   width: 300px;
   margin: 0 auto;
-  margin-top: 150px;
 }
 .tabs {
   display: table-cell;
@@ -54,7 +53,7 @@ h1 {
   text-align: center;
   vertical-align: middle;
   border: 2px solid #ffffff;
-  border-bottom: 0px;
+  border-bottom: 2px;
   position: relative;
   font-size: 1.3em;
   color: #ffffff;
