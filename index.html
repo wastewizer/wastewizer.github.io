@@ -17,27 +17,42 @@
       <h2> Debug notifications here </h2>
       </div>
     
-    <form name="LoginInfo" id="LoginInfo" >
-      <div class="container">
-        <label for="uname"><b>Username</b></label><br>
-        <input type="text" placeholder="Enter Username" name="uname" required>
-        <br>
-        <label for="psw"><b>Password</b></label><br>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+      <div id="container">
+        <div id="tabs">
+            <p id="lt" class="tabs" onclick="loginTabFun()">Log in</p>
+            <p id="rt" class="tabs" onclick="regTabFun()">Register</p>
 
-      <button class="loginbtn" id="login">Login</button><br>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
+            <div id="clear"></div>
+        </div>
 
-    <div class="container" style="background-color:darkgray">
-      <button type="button" class="homebtn" onclick="location.href='https://wastewizer.com'">To WasteWizer.com</button>
-      <span class="psw">Forgot <a href="tooBad">password?</a></span>
+        <div id="cont">
+            <div id="login" class="comm">
+                <h3>Sign in</h3>
+
+                <input id="se" type="email" placeholder="Email" required/>
+                <input id="sp" type="password" placeholder="Password" required/>
+                <input type="submit" onclick="login()" value="Submit"/>
+
+                <p onclick="forTabFun()">Forget Password?</p>
+            </div>
+            <div id="register" class="comm">
+                <h3>Register</h3>
+
+                <input id="re" type="email" placeholder="Email" required/>
+                <input id="rp" type="password" placeholder="Password" required/>
+                <input id="rrp" type="password" placeholder="Re write Password" required/>
+                <input type="submit" onclick="register()" value="Submit"/>
+
+            </div >
+            <div id="forgot" class="comm">
+            <h3>Forgot Password</h3>
+            <div>
+                <input id="fe" type="email" placeholder="Email" required/>
+                <input type="submit" onclick="forgot()" value="Submit"/>
+            </div>
+            </div>
+        </div>
     </div>
-  </form>
- 
-    <!--Adams is here l -->
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particle-api-js/7.3.0/particle.min.js"></script>
     <script src="main.js"></script>
