@@ -1,6 +1,3 @@
-// Hold valid username/password combinations
-var emailArray=['aclark@wastewizer.com'];
-var passwordArray=['asdf'];
 
 // Get references to UI elements
 var loginBox = document.getElementById("login");
@@ -81,31 +78,17 @@ function register(){
 function login(){
     event.preventDefault();
     var email = document.getElementById("se").value;
-    var password = document.getElementById("sp").value;
-    var i = emailArray.indexOf(email);
-    if(emailArray.indexOf(email) == -1){
-        if (email == ""){
-            alert("Email required.");
-            return ;
-        }
-        alert("Email does not exist.");
-        return ;
-    }
-    else if(passwordArray[i] != password){
-        if (password == ""){
-            alert("Password required.");
-            return ;
-        }
-        alert("Passwords do not match.");
-        return ;
-    }
-    else {
+    var password = document.getElementById("sp").value;  
+    particle.login({ username : email, password : password }).then(function(data) {
         alert("Logged in as " + email);
         document.getElementById("se").value ="";
         document.getElementById("sp").value="";
         window.location.href = "dashboard";
-        return ;
-    }
+        return;
+    }, function(err) {
+        alert("Invalid Email/Password Combination");
+        return;
+    });
 }
 
 function forgot(){
