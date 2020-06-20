@@ -7,6 +7,8 @@ var loginTab = document.getElementById("lt");
 var regTab = document.getElementById("rt");
 var Debug = document.getElementById('debug');
 
+var particle = new Particle();
+
 log("Debug working");
 
 function log(data) {
