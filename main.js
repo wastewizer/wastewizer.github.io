@@ -103,6 +103,7 @@ function login(){
         alert("Logged in as " + email);
         document.getElementById("se").value ="";
         document.getElementById("sp").value="";
+        window.location.href = "dashboard";
         return ;
     }
 }

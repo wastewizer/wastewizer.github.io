@@ -38,25 +38,17 @@ h1 {
   transform: translateY(4px);
 }
 
-p {
-  text-align: center;
-  font-size: 50px;
-  font-weight: 500;
-}
-
-
 
 /* ////////////////////////////////////////// Login Page //////////////////////////////////////////// */
 #container {
   width: 300px;
-  margin: 0 auto;
-  margin-top: 150px;
+  margin: auto auto;
 }
 .tabs {
   display: table-cell;
   width: 30%;
   background-color: royalblue;
-  padding: 10px;
+  padding: 20px 10px;
   float: left;
   text-align: center;
   vertical-align: middle;
