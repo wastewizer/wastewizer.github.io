@@ -63,17 +63,16 @@ function register(){
         alert("Passwords don't match.");
         return;
     }
-    else if(emailArray.indexOf(email) == -1){
-        emailArray.push(email);
-        passwordArray.push(password);
-        alert(email + "  Thanks for registering. \nTry to login Now");
+    particle.createCustomer({ email : email, password : password}).then(function(data) {
+        alert(email + "\nThanks for registering. \nTry to login now");
         document.getElementById("re").value ="";
         document.getElementById("rp").value="";
         document.getElementById("rrp").value="";
-    }
-    else{
-        alert(email + " is already registered.");
-        return ;
+        window.location.reload();
+    }, function(err) {
+        alert("New account could not be created.\nYou may have an existing account.");
+        log(err);
+        return;
     }
 }
 
@@ -81,6 +80,14 @@ function login(){
     event.preventDefault();
     var email = document.getElementById("se").value;
     var password = document.getElementById("sp").value;  
+    if (email == ""){
+        alert("Email required.");
+        return ;
+    }
+    else if (password == ""){
+        alert("Password required.");
+        return ;
+    }
     particle.login({ username : email, password : password }).then(function(data) {
         alert("Logged in as " + email);
         document.getElementById("se").value ="";
@@ -89,21 +96,26 @@ function login(){
         return;
     }, function(err) {
         alert("Invalid Email/Password Combination");
+        log(err);
         return;
     });
 }
 
 function forgot(){
-      event.preventDefault();
-      var email = document.getElementById("fe").value;
-      if(emailArray.indexOf(email) == -1){
-          if (email == ""){
-              alert("Email required.");
-              return ;
-          }
-          alert("Email does not exist.");
-          return ;
-      }
-      alert("Email sent. \n  Thanks");
-      document.getElementById("fe").value ="";
+    event.preventDefault();
+    var email = document.getElementById("fe").value;
+      
+    if (email == ""){
+        alert("Email required.");
+        return ;
+    }
+    particle.resetPassword({username : email}).then(function(data) {
+        alert("Email sent. \n  Thanks");
+        document.getElementById("fe").value ="";
+        return;
+    }, function(err) {
+        alert("User not found");
+        log(err);
+        return;
+    }
 }
