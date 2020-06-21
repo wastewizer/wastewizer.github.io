@@ -73,7 +73,7 @@ function register(){
         alert("New account could not be created.\nYou may have an existing account.");
         log(err);
         return;
-    }
+    });
 }
 
 function login(){
@@ -117,5 +117,5 @@ function forgot(){
         alert("User not found");
         log(err);
         return;
-    }
+    });
 }
