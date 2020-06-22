@@ -4,12 +4,12 @@ let Var1 = document.getElementById('var1');
 let Var2 = document.getElementById('var2');
 
 debugLog("Debug working");
+debugLog(sessionStorage.token);
+
 // Declare global variables
 var strainGaugeReadings;
 var angles1;
 var particle = new Particle();
-var user = "aclark@wastewizer.com";
-var pass = "Wastewizer.1";
 var myToken;
 
 function debugLog(data) {
@@ -23,8 +23,8 @@ function log1(data) {
 function log2(data) {
   Var2.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
 }
-
-particle.login({ username : user, password : pass, tokenDuration : 1000 }).then(function(data) {
+if (sessionStorage.token.localeCompare("granted")) {
+particle.login({ username : sessionStorage.email, password : sessionStorage.password, tokenDuration : 100000 }).then(function(data) {
   debugLog('Login Successful');
   debugLog(data.body.access_token);
   
@@ -56,4 +56,8 @@ function getData(myDevice, myToken) {
   }, function(err) {
         log2("An error occurred retrieving data:", err);
     });
+}
+} else {
+  alert("You do not have access. Please login first.");
+  window.location.href("..");
 }

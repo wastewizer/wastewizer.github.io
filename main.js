@@ -7,14 +7,19 @@ var loginTab = document.getElementById("lt");
 var regTab = document.getElementById("rt");
 var Debug = document.getElementById('debug');
 
+// Create particle object
 var particle = new Particle();
 
-log("Debug working");
+// token "granted" when user logs in
+sessionStorage.setItem("token","denied");
 
+// Debug functions
+log("Debug working");
 function log(data) {
   Debug.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
 }
 
+// Login Page tab formatting
 function regTabFun(){
     event.preventDefault();
     regBox.style.visibility="visible";
@@ -23,7 +28,6 @@ function regTabFun(){
     regTab.style.backgroundColor="darkblue";
     loginTab.style.backgroundColor="royalblue";
 }
-
 function loginTabFun(){
     event.preventDefault();
     regBox.style.visibility="hidden";
@@ -32,7 +36,6 @@ function loginTabFun(){
     loginTab.style.backgroundColor="darkblue";
     regTab.style.backgroundColor="royalblue";
 }
-
 function forTabFun(){
     event.preventDefault();
     regBox.style.visibility="hidden";
@@ -78,20 +81,22 @@ function register(){
 
 function login(){
     event.preventDefault();
-    var email = document.getElementById("se").value;
-    var password = document.getElementById("sp").value;  
-    if (email == ""){
+    sessionStorage.email = document.getElementById("se").value;
+    sessionStorage.password = document.getElementById("sp").value;
+
+    if (session.email == ""){
         alert("Email required.");
         return ;
     }
-    else if (password == ""){
+    else if (session.password == ""){
         alert("Password required.");
         return ;
     }
-    particle.login({ username : email, password : password }).then(function(data) {
-        alert("Logged in as " + email);
+    particle.login({ username : sessionStorage.email, password : sessionStorage.password }).then(function(data) {
+        alert("Logged in as " + sessionStorage.email);
         document.getElementById("se").value ="";
         document.getElementById("sp").value="";
+        sessionStorage.setItem("token","granted");
         window.location.href = "dashboard";
         return;
     }, function(err) {
