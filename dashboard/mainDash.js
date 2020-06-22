@@ -23,7 +23,7 @@ function log1(data) {
 function log2(data) {
   Var2.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
 }
-if (sessionStorage.token.localeCompare("granted") == 0) {
+if (sessionStorage.token && sessionStorage.token.localeCompare("granted") == 0) {
 particle.login({ username : sessionStorage.email, password : sessionStorage.password, tokenDuration : 100000 }).then(function(data) {
   debugLog('Login Successful');
   debugLog(data.body.access_token);
