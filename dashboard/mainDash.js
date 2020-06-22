@@ -4,7 +4,8 @@ let Var1 = document.getElementById('var1');
 let Var2 = document.getElementById('var2');
 
 debugLog("Debug working");
-debugLog(sessionStorage.token);
+debugLog("Access " + sessionStorage.token);
+debugLog("a".localeCompare("a"));
 
 // Declare global variables
 var strainGaugeReadings;
@@ -66,5 +67,5 @@ function getData(myDevice, myToken) {
 
 } else {
   alert("You do not have access. Please login first.");
-  window.location.href("..");
+  window.location.href = "..";
 }
