@@ -84,11 +84,11 @@ function login(){
     sessionStorage.email = document.getElementById("se").value;
     sessionStorage.password = document.getElementById("sp").value;
 
-    if (session.email == ""){
+    if (sessionStorage.email == ""){
         alert("Email required.");
         return ;
     }
-    else if (session.password == ""){
+    else if (sessionStorage.password == ""){
         alert("Password required.");
         return ;
     }
