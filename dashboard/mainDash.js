@@ -30,6 +30,12 @@ particle.login({ username : sessionStorage.email, password : sessionStorage.pass
   
   var myDevice = 'e00fce68a38d68b5d14b3e8b';
   myToken = data.body.access_token;
+
+  particle.getDevice({deviceId : myDevice, auth : myToken}).then(function(data) {
+    debugLog("Device attributes:" + data);
+  }, function(err) {
+    debugLog("Get device info failed: " + err);
+  });
   
   getData(myDevice, myToken);
    
@@ -57,6 +63,7 @@ function getData(myDevice, myToken) {
         log2("An error occurred retrieving data:", err);
     });
 }
+
 } else {
   alert("You do not have access. Please login first.");
   window.location.href("..");
