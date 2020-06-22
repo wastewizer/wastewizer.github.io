@@ -15,6 +15,7 @@ sessionStorage.setItem("token","denied");
 
 // Debug functions
 log("Debug working");
+log("a".localeCompare("a"));
 function log(data) {
   Debug.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
 }
