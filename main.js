@@ -38,8 +38,8 @@ function forTabFun(){
     regBox.style.visibility="hidden";
     loginBox.style.visibility="hidden";
     forgetBox.style.visibility="visible";
-    regTab.style.backgroundColor="rgba(11, 177, 224, 0.82)";
-    loginTab.style.backgroundColor="rgba(11, 177, 224, 0.82)";
+    regTab.style.backgroundColor="royalblue";
+    loginTab.style.backgroundColor="royalblue";
 }
 
 function register(){
