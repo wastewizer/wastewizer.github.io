@@ -5,7 +5,6 @@ let Var2 = document.getElementById('var2');
 
 debugLog("Debug working");
 debugLog("Access " + sessionStorage.token);
-debugLog("a".localeCompare("a"));
 
 // Declare global variables
 var strainGaugeReadings;
@@ -24,7 +23,7 @@ function log1(data) {
 function log2(data) {
   Var2.insertAdjacentHTML('afterend', '<div>' + data + '</div>');
 }
-if (sessionStorage.token.localeCompare("granted")) {
+if (sessionStorage.token.localeCompare("granted") == 0) {
 particle.login({ username : sessionStorage.email, password : sessionStorage.password, tokenDuration : 100000 }).then(function(data) {
   debugLog('Login Successful');
   debugLog(data.body.access_token);
