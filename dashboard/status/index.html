@@ -18,5 +18,15 @@
       <p>Delivered!</p>
     
 
-    </body>
+  </body>
+
+  <script> 
+    if (sessionStorage.token && sessionStorage.token.localeCompare("granted") == 0 
+      && sessionStorage.email && sessionStorage.password) {
+    } else {
+      alert("You do not have access. Please login first.");
+      window.location.href = "../..";
+    }
+  </script>
+  
 </html>

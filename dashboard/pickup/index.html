@@ -19,6 +19,10 @@
   
     <script src="https://smtpjs.com/v3/smtp.js""></script>
     <script>
+      
+    if (sessionStorage.token && sessionStorage.token.localeCompare("granted") == 0 
+      && sessionStorage.email && sessionStorage.password) {
+
       let YesButton = document.getElementById('confirm');
 
       // Send pickup notice on button click
@@ -46,6 +50,12 @@
 		    message => alert("mail sent successfully")
 	      );
       }
+
+    } else {
+      alert("You do not have access. Please login first.");
+      window.location.href = "../..";
+    }
+    
   </script>
      
 </html>

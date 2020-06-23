@@ -11,8 +11,13 @@ var Debug = document.getElementById('debug');
 var particle = new Particle();
 
 // token "granted" when user logs in
+// Checks token
+if (sessionStorage.token && sessionStorage.token.localeCompare("granted") == 0 
+    && sessionStorage.email && sessionStorage.password) {
+    window.location.href = "dashboard";
+} else {
 sessionStorage.setItem("token","denied");
-
+}
 // Debug functions
 log("Debug working");
 function log(data) {
@@ -45,6 +50,7 @@ function forTabFun(){
     loginTab.style.backgroundColor="royalblue";
 }
 
+// PARTICLE API functions
 function register(){
     event.preventDefault();
     var email = document.getElementById("re").value;
