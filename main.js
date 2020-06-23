@@ -14,6 +14,7 @@ var particle = new Particle();
 // Checks token
 if (sessionStorage.token && sessionStorage.token.localeCompare("granted") == 0 
     && sessionStorage.email && sessionStorage.password) {
+    alert("Welcome again " + sessionStorage.email);
     window.location.href = "dashboard";
 } else {
 sessionStorage.setItem("token","denied");
