@@ -11,6 +11,7 @@ var strainGaugeReadings;
 var angles1;
 var particle = new Particle();
 var myToken;
+var myDevice = 'e00fce68a38d68b5d14b3e8b';
 
 // Debug functions
 function debugLog(data) {
@@ -33,7 +34,6 @@ particle.login({ username : sessionStorage.email, password : sessionStorage.pass
   debugLog(data.body.access_token);
   
   // Device info and access token
-  var myDevice = 'e00fce68a38d68b5d14b3e8b';
   myToken = data.body.access_token;
 
   // Get device info
@@ -43,14 +43,14 @@ particle.login({ username : sessionStorage.email, password : sessionStorage.pass
     debugLog("Get device info failed: " + err);
   });
   
-  getData(myDevice, myToken);
+  getData();
    
   // getData every 5 seconds
   setInterval(getData, 5000);
   
 });
 
-function getData(myDevice, myToken) {
+function getData() {
   // Variable 1
   particle.getVariable({ deviceId: myDevice, name: "strainGaugeReadings", auth: myToken }).then(function(data1) {
    strainGaugeReadings = data1.body.result;
