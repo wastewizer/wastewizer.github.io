@@ -72,7 +72,7 @@ function register(){
         alert("Passwords don't match.");
         return;
     }
-    particle.createCustomer({ email : email, password : password}).then(function(data) {
+    particle.createCustomer({ email : email, password : password, product : 11367}).then(function(data) {
         alert(email + "\nThanks for registering. \nTry to login now");
         document.getElementById("re").value ="";
         document.getElementById("rp").value="";
