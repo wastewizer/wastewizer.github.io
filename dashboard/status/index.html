@@ -11,12 +11,23 @@
     <div class="Options">
       <img src="../../Logo.svg" width=100%/>
       <br>
-    </div>
                                
-      <p>Delivery Scheduled!</p>
-      <p>On its way!</p>
-      <p>Delivered!</p>
+      <h1>Delivery Scheduled!</h1>
+      <h1>On its way!</h1>
+      <h1>Delivered!</h1>
+
+      </div>
     
 
-    </body>
+  </body>
+
+  <script> 
+    if (sessionStorage.token && sessionStorage.token.localeCompare("granted") == 0 
+      && sessionStorage.email && sessionStorage.password) {
+    } else {
+      alert("You do not have access. Please login first.");
+      window.location.href = "../..";
+    }
+  </script>
+  
 </html>
