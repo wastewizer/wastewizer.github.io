@@ -3,9 +3,9 @@ class Database{
  
     // specify your own database credentials
     private $host = "localhost";
-    private $db_name = "PHPLearning";
+    private $db_name = "wastewizer";
     private $username = "root";
-    private $password = "";
+    private $password = "Wastewizer.1";
     public $conn;
  
     // get the database connection
@@ -16,6 +16,7 @@ class Database{
         try{
             $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
             $this->conn->exec("set names utf8");
+            echo "Connected successfully";
         }catch(PDOException $exception){
             echo "Connection error: " . $exception->getMessage();
         }
